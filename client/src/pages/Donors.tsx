@@ -30,7 +30,7 @@ const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
 export default function Donors() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [bloodGroup, setBloodGroup] = useState('');
+  const [bloodGroup, setBloodGroup] = useState('all');
   const [location, setLocation] = useState('');
   
   // Fetch all donors with optional filters
@@ -87,7 +87,7 @@ export default function Donors() {
                       <SelectValue placeholder="All blood groups" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All blood groups</SelectItem>
+                      <SelectItem value="all">All blood groups</SelectItem>
                       {bloodGroups.map(group => (
                         <SelectItem key={group} value={group}>{group}</SelectItem>
                       ))}

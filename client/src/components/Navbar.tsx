@@ -37,14 +37,16 @@ export default function Navbar() {
             </div>
             <div className="hidden md:ml-6 md:flex md:space-x-6">
               {navLinks.map((link) => (
-                <Link key={link.path} href={link.path}>
-                  <a className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                <Link 
+                  key={link.path} 
+                  href={link.path}
+                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
                     link.active 
                       ? "text-primary border-b-2 border-primary" 
                       : "text-neutral-800 hover:text-primary border-b-2 border-transparent"
-                  }`}>
-                    {link.title}
-                  </a>
+                  }`}
+                >
+                  {link.title}
                 </Link>
               ))}
             </div>
@@ -94,14 +96,16 @@ export default function Navbar() {
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="pt-2 pb-3 space-y-1">
           {navLinks.map((link) => (
-            <Link key={link.path} href={link.path}>
-              <a className={`block pl-3 pr-4 py-2 text-base font-medium ${
+            <Link 
+              key={link.path} 
+              href={link.path}
+              className={`block pl-3 pr-4 py-2 text-base font-medium ${
                 link.active 
                   ? "text-primary border-l-4 border-primary bg-neutral-50" 
                   : "text-neutral-800 hover:text-primary border-l-4 border-transparent hover:border-primary hover:bg-neutral-50"
-              }`}>
-                {link.title}
-              </a>
+              }`}
+            >
+              {link.title}
             </Link>
           ))}
         </div>

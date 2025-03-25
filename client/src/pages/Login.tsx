@@ -152,8 +152,8 @@ export default function Login() {
             <div className="text-center">
               <p className="text-sm text-neutral-500">
                 Don't have an account?{' '}
-                <Link href="/register">
-                  <a className="text-primary hover:underline">Register now</a>
+                <Link href="/register" className="text-primary hover:underline">
+                  Register now
                 </Link>
               </p>
             </div>

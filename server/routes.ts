@@ -183,13 +183,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get latest donors
+  // Get latest donors i think so
   app.get("/api/donors/latest", async (req, res) => {
     try {
       const limit = parseInt(req.query.limit as string) || 3;
       const donors = await storage.getLatestDonors(limit);
       
-      // Remove passwords from response
+      // Remove passwords from response many not work i think
       const donorsWithoutPasswords = donors.map(donor => {
         const { password, ...donorWithoutPassword } = donor;
         return donorWithoutPassword;
@@ -201,7 +201,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all donors
+  // Get all donors it is working
   app.get("/api/donors", async (req, res) => {
     try {
       const donors = await storage.getAllUsers();
@@ -234,7 +234,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         );
       }
       
-      // Remove passwords from response
+      // Remove passwords from response not yeat test pls test it 
       const donorsWithoutPasswords = filteredDonors.map(donor => {
         const { password, ...donorWithoutPassword } = donor;
         return donorWithoutPassword;

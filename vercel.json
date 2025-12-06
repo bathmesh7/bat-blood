@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": null,
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "your_postgresql_connection_string",
+    "SESSION_SECRET": "your_secure_random_session_secret_key",
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "DATABASE_URL": "your_postgresql_connection_string",
+      "SESSION_SECRET": "your_secure_random_session_secret_key",
+      "NODE_ENV": "production"
+    }
+  }
+}
